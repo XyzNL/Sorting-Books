@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookFinder - HashSearch</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>📚 BookFinder</h1>
+        <p>Sistem Pencarian Buku dengan Algoritma HashSearch</p>
+      </header>
+
+      <div class="card">
+        <h2 style="margin-bottom: 20px; color: #333">🔍 Pencarian Buku</h2>
+        <div class="search-section">
+          <div class="search-box">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Cari berdasarkan judul, penulis, atau ISBN..."
+            />
+            <button onclick="searchBook()">Cari</button>
+            <button class="btn-secondary" onclick="showAllBooks()">
+              Tampilkan Semua
+            </button>
+          </div>
+        </div>
+        <div id="alertBox"></div>
+      </div>
+
+      <div class="card">
+        <h2 style="margin-bottom: 20px; color: #333">➕ Tambah Buku Baru</h2>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Judul Buku</label>
+            <input type="text" id="title" placeholder="Masukkan judul buku" />
+          </div>
+          <div class="form-group">
+            <label>Penulis</label>
+            <input
+              type="text"
+              id="author"
+              placeholder="Masukkan nama penulis"
+            />
+          </div>
+          <div class="form-group">
+            <label>ISBN</label>
+            <input type="text" id="isbn" placeholder="Masukkan ISBN" />
+          </div>
+          <div class="form-group">
+            <label>Tahun Terbit</label>
+            <input type="number" id="year" placeholder="Masukkan tahun" />
+          </div>
+        </div>
+        <button onclick="addBook()">Tambah Buku</button>
+      </div>
+
+      <div class="card">
+        <h2 style="margin-bottom: 20px; color: #333">📖 Daftar Buku</h2>
+        <div class="stats">
+          <div class="stat-item">
+            <div class="number" id="totalBooks">0</div>
+            <div class="text">Total Buku</div>
+          </div>
+          <div class="stat-item">
+            <div class="number" id="hashSize">100</div>
+            <div class="text">Hash Table Size</div>
+          </div>
+          <div class="stat-item">
+            <div class="number" id="searchCount">0</div>
+            <div class="text">Pencarian</div>
+          </div>
+        </div>
+        <div id="bookList" class="book-list"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
