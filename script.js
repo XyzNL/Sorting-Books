@@ -111,7 +111,7 @@ const initialBooks = [
     year: 2009,
   },
   {
-     title: "Pulang",
+    title: "Pulang",
     author: "Tere Liye",
     isbn: "978-602-03-1234-5",
     year: 2015,
@@ -146,6 +146,51 @@ const initialBooks = [
 initialBooks.forEach((book) => hashTable.insert(book));
 updateStats();
 displayBooks(hashTable.getAllBooks());
+
+// Implementasi Quick Sort (Tanpa Library .sort())
+function quickSort(arr, sortBy = 'title') {
+    if (arr.length <= 1) {
+        return arr;
+    }
+
+    const pivot = arr[arr.length - 1];
+    const left = [];
+    const right = [];
+
+    for (let i = 0; i < arr.length - 1; i++) {
+        // Bandingkan berdasarkan properti yang dipilih (title/year)
+        let valA = arr[i][sortBy];
+        let valB = pivot[sortBy];
+
+        // Jika string, ubah ke lowercase agar tidak case-sensitive
+        if (typeof valA === 'string') {
+            valA = valA.toLowerCase();
+            valB = valB.toLowerCase();
+        }
+
+        if (valA < valB) {
+            left.push(arr[i]);
+        } else {
+            right.push(arr[i]);
+        }
+    }
+
+    // Rekursif: gabungkan left + pivot + right
+    return [...quickSort(left, sortBy), pivot, ...quickSort(right, sortBy)];
+}
+
+// Fungsi untuk dipanggil dari Tombol di HTML
+function sortBooks(criteria) {
+    // Ambil semua buku
+    let currentBooks = hashTable.getAllBooks();
+    
+    // Lakukan sorting manual
+    const sortedBooks = quickSort(currentBooks, criteria);
+    
+    // Tampilkan hasil
+    displayBooks(sortedBooks);
+    showAlert(`Buku diurutkan berdasarkan ${criteria}`, "info");
+}
 
 // Fungsi menambah buku baru
 function addBook() {

@@ -58,6 +58,25 @@
         <button onclick="addBook()">Tambah Buku</button>
       </div>
 
+      <!-- TAMBAHAN: Section Sorting Buku -->
+      <div class="card">
+        <h2 style="margin-bottom: 20px; color: #333">📊 Urutkan Buku</h2>
+        <div class="sort-buttons">
+          <button class="sort-btn" onclick="sortBooks('title')">
+            📝 Urutkan Judul (A-Z)
+          </button>
+          <button class="sort-btn" onclick="sortBooks('author')">
+            👤 Urutkan Penulis (A-Z)
+          </button>
+          <button class="sort-btn" onclick="sortBooks('year')">
+            📅 Urutkan Tahun (Terlama)
+          </button>
+          <button class="sort-btn" onclick="sortBooks('isbn')">
+            🔢 Urutkan ISBN
+          </button>
+        </div>
+      </div>
+
       <div class="card">
         <h2 style="margin-bottom: 20px; color: #333">📖 Daftar Buku</h2>
         <div class="stats">
