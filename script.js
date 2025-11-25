@@ -110,6 +110,36 @@ const initialBooks = [
     isbn: "978-979-22-6142-0",
     year: 2009,
   },
+  {
+     title: "Pulang",
+    author: "Tere Liye",
+    isbn: "978-602-03-1234-5",
+    year: 2015,
+  },
+  {
+    title: "Laut Bercerita",
+    author: "Leila S. Chudori",
+    isbn: "978-602-424-694-5",
+    year: 2017,
+  },
+  {
+    title: "Gadis Kretek",
+    author: "Ratih Kumala",
+    isbn: "978-602-424-825-3",
+    year: 2012,
+  },
+  {
+    title: "Sepotong Hati yang Baru",
+    author: "Tere Liye",
+    isbn: "978-602-03-4567-8",
+    year: 2020,
+  },
+  {
+    title: "Kata",
+    author: "Rintik Sedu",
+    isbn: "978-623-744-701-2",
+    year: 2019,
+  },
 ];
 
 // Masukkan data awal ke hash table
